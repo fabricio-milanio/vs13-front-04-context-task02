@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <NotFoundContainer>
       <h1>
-        <i class="ph ph-warning-circle"></i>404 - Página não encontrada
+        <i className="ph ph-warning-circle"></i>404 - Página não encontrada
       </h1>
       <Link to="/">Página Inicial</Link>
     </NotFoundContainer>
