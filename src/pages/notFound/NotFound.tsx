@@ -1,7 +1,13 @@
+import { Link } from 'react-router-dom';
+import { NotFoundContainer } from './notFound';
+
 export default function NotFound() {
   return (
-    <main>
-      <h1>404 - Página não encontrada</h1>
-    </main>
+    <NotFoundContainer>
+      <h1>
+        <i class="ph ph-warning-circle"></i>404 - Página não encontrada
+      </h1>
+      <Link to="/">Página Inicial</Link>
+    </NotFoundContainer>
   );
 }
