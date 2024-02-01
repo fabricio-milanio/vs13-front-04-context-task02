@@ -1,10 +1,18 @@
 import { createContext, useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import {
   IGame,
   IGameContextType,
   IGameProviderProps,
 } from '../../utils/interface';
+// import axios from 'axios';
+
+const getGames = async () => {
+  const url = 'http://localhost:3000/games';
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};
 
 export const GameContext = createContext({} as IGameContextType);
 
@@ -15,11 +23,10 @@ export const GameProvider = ({ children }: IGameProviderProps) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = '/api/api1/games';
-        const response = await axios.get<IGame[]>(url);
-        setData(response.data);
+        const response = await getGames();
+        setData(response);
       } catch (error) {
-        console.error('Erro ao buscar os dados:', error);
+        console.log(error);
       }
       setLoading(false);
     };
