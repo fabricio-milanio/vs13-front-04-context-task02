@@ -1,11 +1,9 @@
 import { createContext, useEffect, useState } from 'react';
-// import axios from 'axios';
 import {
   IGame,
   IGameContextType,
   IGameProviderProps,
 } from '../../utils/interface';
-// import axios from 'axios';
 
 const getGames = async () => {
   const url = 'http://localhost:3000/games';
