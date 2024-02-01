@@ -11,12 +11,11 @@ function GamesContent() {
       {loading ? (
         <p>Carregando dados...</p>
       ) : (
-        <div className="">
+        <div className="game-container">
           {data.map((game) => (
             <div className="card-game" key={game.id}>
               <h2 className="">{game.title}</h2>
               <img src={game.thumbnail} alt={game.title} className="" />
-              <br />
             </div>
           ))}
         </div>
