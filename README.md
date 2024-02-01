@@ -1,30 +1,91 @@
-# React + TypeScript + Vite
+<h1 align="center"> Game Store </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  Repositório referente ao desenvolvimento do front-end da aplicação de game utilizando contextAPI.<br/>
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-instalacao-do-projeto">Instalação do projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img alt="imagem do site pronto no vercel" src="./src/assets/home-game-context.png">
+</p>
 
-## Expanding the ESLint configuration
+<p align="center">
+  <a href="https://game-store-context.vercel.app/" target="_blank">➡️ Acesse o deploy!</a>
+</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Tecnologias
 
-- Configure the top-level `parserOptions` property like this:
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
+- React (Vite)
+- TypeScript
+- HTML
+- CSS
+- Component Styled
+- Json Server
+
+## ⚙️ Instalação do projeto
+
+Passo-a-passo:
+
+1. Clone o repositório através desse link:
+
+```
+https://github.com/fabricio-milanio/vs13-front-04-context-task02
+```
+
+2. Execute os seguintes comandos:
+
+```
+npm i
+npm start
+```
+
+3. Para utilizar a aplicação, instale o JSON Server com os seguinte comando:
+
+```
+npm install -g json-server
+```
+
+4. Em seguinda crie um arquivo com o nome db.json, com a seguinte estrutura:
+
+```
+{
+  "games": [
+   {
+    "id": "1136",
+    "title": "Overwatch 2",
+    "thumbnail": "https://www.mmobomb.com/g/1136/thumbnail.jpg",
+    "short_description": "Big changes come to the Overwatch formula in this sequel...and so does PvE content, eventually.",
+    "game_url": "https://www.mmobomb.com/open/overwatch-2",
+    "genre": "Shooter",
+    "platform": "PC (Windows)",
+    "publisher": "Activision Blizzard King",
+    "developer": "Blizzard Entertainment",
+    "release_date": "2022-10-04",
+    "profile_url": "https://www.mmobomb.com/overwatch-2"
   },
+  ]
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+5. Execute o servidor com o comando abaixo:
+
+```
+json-server --watch ./src/db/db.json
+```
+
+## Notas
+
+Foi utilizado o Json Server devido um problema com a api utilizada inicialmente. Tive um problema com CORS que não consegui contornar e para que a aplicação funcionasse, foi necessário mockar os dados.
+
+- JSON Server é apenas para desenvolvimento;
+
+## 💻 Sobre o Projeto
+
+A Game Store é um espaço para todos os amantes de jogos, que buscar se divertir e fazer novas amizades.
