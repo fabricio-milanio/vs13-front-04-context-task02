@@ -1,33 +1,9 @@
-import { useEffect, useState } from 'react';
 import { GameContainer } from './games';
-import axios from 'axios';
+import { GameContext } from '../../context/gameContext/GameContext';
+import { useContext } from 'react';
 
-interface Game {
-  id: number;
-  title: string;
-  thumbnail: string;
-}
-
-function Games() {
-  const [data, setData] = useState<Game[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const url = '/api/api1/games';
-        const response = await axios.get(url);
-        console.log(response.data);
-        setData(response.data);
-      } catch (error) {
-        console.error('Erro ao buscar os dados:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+function GamesContent() {
+  const { data, loading } = useContext(GameContext);
 
   return (
     <GameContainer>
@@ -49,4 +25,4 @@ function Games() {
   );
 }
 
-export default Games;
+export default GamesContent;
